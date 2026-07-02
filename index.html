@@ -78,8 +78,6 @@ nav{
 nav li{
     list-style:none;
 }
-}
-
 nav a{
     text-decoration:none;
     color:white;
@@ -129,7 +127,6 @@ nav a:hover{
     color:white;
 
     animation:heroFade 1s ease;
-}
 }
 
 .tag{
@@ -493,8 +490,6 @@ Register for Engineers Day, July 23rd, 2026</a>
 
 
 <section id="courses" class="section reveal">
-``
-
 
 <div class="container">
 
@@ -534,8 +529,7 @@ Build knowledge, strengthen skills and meet CPD requirements.
 </div>
 
 </section>
-</section>
-
+    
 <!-- COUNTDOWN SECTION START -->
 
 <section class="section reveal">
@@ -580,7 +574,6 @@ Countdown to Engineers Day 2026
 
 <!-- COUNTDOWN SECTION END -->
 
-<section id="event" class="section event reveal">
 <section id="event" class="section event reveal">
 
 <div class="container">
@@ -645,21 +638,20 @@ new Date("July 23, 2026 10:30:00").getTime();
 
 setInterval(() => {
 
-const now = new Date().getTime();
+    const now = new Date().getTime();
+    const distance = eventDate - now;
 
-const distance = eventDate - now;
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000*60*60*24));
 
-document.getElementById("days").innerHTML =
-Math.floor(distance / (1000*60*60*24));
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
 
-document.getElementById("hours").innerHTML =
-Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance % (1000*60*60)) / (1000*60));
 
-document.getElementById("minutes").innerHTML =
-Math.floor((distance % (1000*60*60)) / (1000*60));
-
-document.getElementById("seconds").innerHTML =
-Math.floor((distance % (1000*60)) / 1000);
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance % (1000*60)) / 1000);
 
 },1000);
 
@@ -668,18 +660,18 @@ document.querySelectorAll('.reveal');
 
 function revealSections(){
 
-reveals.forEach(section => {
+    reveals.forEach(section => {
 
-const revealTop =
-section.getBoundingClientRect().top;
+        const revealTop =
+        section.getBoundingClientRect().top;
 
-if(revealTop < window.innerHeight - 100){
+        if(revealTop < window.innerHeight - 100){
 
-section.classList.add('active');
+            section.classList.add('active');
 
-}
+        }
 
-});
+    });
 
 }
 
@@ -688,3 +680,6 @@ window.addEventListener('scroll', revealSections);
 revealSections();
 
 </script>
+
+</body>
+</html>
