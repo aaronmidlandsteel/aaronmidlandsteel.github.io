@@ -12,7 +12,7 @@
 :root{
     --primary:#004289;
     --secondary:#FFDE14;
-    --accent:#646363;
+    --grey:#646363;
 }
 
 *{
@@ -29,7 +29,6 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     color:#222;
     line-height:1.6;
-    overflow-x:hidden;
 }
 
 .container{
@@ -44,10 +43,10 @@ header{
     width:100%;
     z-index:1000;
 
-    background:rgba(255,255,255,0.92);
+    background:rgba(255,255,255,0.95);
     backdrop-filter:blur(12px);
 
-    border-bottom:1px solid rgba(0,0,0,.05);
+    border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 nav{
@@ -59,23 +58,23 @@ nav{
 
 .logo{
     color:var(--primary);
-    font-size:1.6rem;
+    font-size:1.5rem;
     font-weight:800;
 }
 
-.nav-links{
+nav ul{
+    list-style:none;
     display:flex;
     gap:30px;
 }
 
-.nav-links a{
+nav a{
     text-decoration:none;
     color:var(--primary);
     font-weight:600;
 }
 
 .hero{
-
     min-height:100vh;
 
     display:flex;
@@ -83,10 +82,10 @@ nav{
 
     background:
     linear-gradient(
-    rgba(0,66,137,0.82),
-    rgba(0,66,137,0.90)
+    rgba(0,66,137,0.78),
+    rgba(0,66,137,0.88)
     ),
-    url("images/factory-birds-eye-view.jpg");
+    url("images/hero.jpg");
 
     background-size:cover;
     background-position:center;
@@ -101,29 +100,29 @@ nav{
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,0.15);
 
     box-shadow:
-    0 25px 60px rgba(0,0,0,.25);
+    0 30px 60px rgba(0,0,0,0.25);
 
     color:white;
 }
 
-.badge{
+.tag{
 
     display:inline-block;
 
-    padding:10px 18px;
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    padding:10px 20px;
 
     border-radius:50px;
-
-    background:rgba(255,255,255,.12);
-
-    border:1px solid rgba(255,255,255,.2);
 
     margin-bottom:25px;
 
@@ -134,11 +133,11 @@ nav{
 
     font-size:5rem;
 
-    line-height:1;
-
-    font-weight:800;
+    line-height:0.95;
 
     margin-bottom:25px;
+
+    font-weight:800;
 
     letter-spacing:-2px;
 }
@@ -159,13 +158,12 @@ nav{
 
     font-size:1.2rem;
 
-    margin-bottom:40px;
-
     max-width:650px;
+
+    margin-bottom:40px;
 }
 
-.button-group{
-
+.buttons{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
@@ -175,49 +173,52 @@ nav{
 
     display:inline-block;
 
-    text-decoration:none;
-
     padding:16px 34px;
 
     border-radius:50px;
+
+    text-decoration:none;
 
     font-weight:700;
 
     transition:.3s;
 }
 
-.btn-primary{
+.primary{
 
     background:var(--secondary);
+
     color:var(--primary);
 
     box-shadow:
-    0 10px 30px rgba(255,222,20,.35);
+    0 10px 30px rgba(255,222,20,0.35);
 }
 
-.btn-primary:hover{
+.primary:hover{
     transform:translateY(-3px);
 }
 
-.btn-outline{
+.secondary{
 
     border:2px solid white;
+
     color:white;
 }
 
-.btn-outline:hover{
+.secondary:hover{
 
     background:white;
+
     color:var(--primary);
 }
 
 .stats{
 
-    margin-top:50px;
-
     display:flex;
 
     gap:50px;
+
+    margin-top:50px;
 
     flex-wrap:wrap;
 }
@@ -230,7 +231,6 @@ nav{
 }
 
 .section{
-
     padding:110px 0;
 }
 
@@ -249,11 +249,11 @@ nav{
 
     text-align:center;
 
-    color:var(--accent);
+    color:var(--grey);
 
     max-width:700px;
 
-    margin:auto auto 60px auto;
+    margin:auto auto 60px;
 }
 
 .cards{
@@ -272,10 +272,10 @@ nav{
 
     padding:35px;
 
-    border-radius:24px;
+    border-radius:25px;
 
     box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
+    0 10px 30px rgba(0,0,0,0.08);
 
     transition:.3s;
 }
@@ -285,7 +285,7 @@ nav{
     transform:translateY(-5px);
 
     box-shadow:
-    0 20px 40px rgba(0,0,0,.12);
+    0 20px 40px rgba(0,0,0,0.12);
 }
 
 .card h3{
@@ -297,21 +297,21 @@ nav{
 
 .event{
 
-    background:#f7f9fc;
+    background:#f8fafc;
 }
 
 .event-box{
 
     background:white;
 
-    padding:50px;
+    padding:60px;
 
     border-radius:30px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
     text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
 }
 
 .event-box h2{
@@ -344,7 +344,7 @@ footer{
     padding:35px;
 }
 
-.nav-links{
+nav ul{
     display:none;
 }
 
@@ -366,11 +366,10 @@ footer{
 Midland Steel Development
 </div>
 
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#courses">Courses</a>
-<a href="#event">Engineers Day</a>
-</div>
+<ul>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#event">Engineers Day</a></li>
+</ul>
 
 </nav>
 
@@ -384,7 +383,7 @@ Midland Steel Development
 
 <div class="hero-card">
 
-<div class="badge">
+<div class="tag">
 CPD • Engineering • Innovation
 </div>
 
@@ -395,16 +394,16 @@ Engineering Knowledge Built From Industry Experience
 <div class="yellow-line"></div>
 
 <p>
-Midland Steel Development delivers high-quality Continuing Professional Development programmes, technical seminars and knowledge-sharing events designed for engineers, architects, designers and construction professionals throughout Ireland.
+Midland Steel Development delivers industry-leading CPD programmes, technical seminars and learning events designed for engineers, architects, designers and construction professionals throughout Ireland.
 </p>
 
-<div class="button-group">
+<div class="buttons">
 
-<a href="#courses" class="btn btn-primary">
+<a href="#courses" class="btn primary">
 Explore Courses
 </a>
 
-<a href="#event" class="btn btn-outline">
+<a href="#event" class="btn secondary">
 Engineers Day 2026
 </a>
 
@@ -440,28 +439,34 @@ Engineers Day 2026
 <div class="container">
 
 <h2 class="section-title">
-Why Choose Midland Steel Development?
+Why Midland Steel Development?
 </h2>
 
 <p class="section-subtitle">
-Practical industry-led learning designed to help engineering professionals stay informed, compliant and competitive.
+Practical, industry-led learning experiences designed to support engineering excellence and professional development.
 </p>
 
 <div class="cards">
 
 <div class="card">
 <h3>Industry Focused</h3>
-<p>Real engineering challenges, real case studies and practical applications.</p>
+<p>
+Real engineering challenges, real projects and practical lessons from industry.
+</p>
 </div>
 
 <div class="card">
 <h3>Expert Speakers</h3>
-<p>Learn from experienced engineers and recognised industry specialists.</p>
+<p>
+Learn from experienced engineers, technical specialists and industry leaders.
+</p>
 </div>
 
 <div class="card">
-<h3>Professional Development</h3>
-<p>Support CPD requirements while expanding technical knowledge and expertise.</p>
+<h3>Professional Growth</h3>
+<p>
+Build knowledge, strengthen skills and meet CPD requirements.
+</p>
 </div>
 
 </div>
@@ -481,12 +486,12 @@ CPD Engineers Day 2026
 </h2>
 
 <p>
-A focused day of engineering excellence, technical presentations, innovative product solutions and valuable networking opportunities.
+A focused day of engineering excellence, technical insight, innovative solutions and valuable networking opportunities.
 </p>
 
-<br>
+<br><br>
 
-<a href="#" class="btn btn-primary">
+<a href="#" class="btn primary">
 Register Interest
 </a>
 
