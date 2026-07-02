@@ -464,7 +464,10 @@ Register for Engineers Day, July 23rd, 2026</a>
 
 </section>
 
-<section id="courses" class="section">
+
+<section id="courses" class="section reveal">
+``
+
 
 <div class="container">
 
@@ -508,7 +511,7 @@ Build knowledge, strengthen skills and meet CPD requirements.
 
 <!-- COUNTDOWN SECTION START -->
 
-<section class="section">
+<section class="section reveal">
 
 <div class="container">
 
@@ -550,8 +553,8 @@ Countdown to Engineers Day 2026
 
 <!-- COUNTDOWN SECTION END -->
 
-<section id="event" class="section event">
-<section id="event" class="section event">
+<section id="event" class="section event reveal">
+<section id="event" class="section event reveal">
 
 <div class="container">
 
@@ -609,5 +612,30 @@ Math.floor((distance % (1000*60)) / 1000);
 },1000);
 
 </script>
-</body>
+<script>
+
+const reveals =
+document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+
+reveals.forEach(reveal => {
+
+const revealTop =
+reveal.getBoundingClientRect().top;
+
+const windowHeight =
+window.innerHeight;
+
+if(revealTop < windowHeight - 100){
+
+reveal.classList.add('active');
+
+}
+
+});
+
+});
+
+</script></body>
 </html>
