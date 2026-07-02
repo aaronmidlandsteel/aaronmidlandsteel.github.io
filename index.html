@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Midland Steel Development | CPD Training</title>
+<title>Midland Steel Development | Engineering CPD</title>
 
 <style>
+
+:root{
+    --primary:#004289;
+    --secondary:#FFDE14;
+    --accent:#646363;
+}
 
 *{
     margin:0;
@@ -20,10 +26,10 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     color:#222;
     line-height:1.6;
-    background:#ffffff;
+    overflow-x:hidden;
 }
 
 .container{
@@ -38,10 +44,10 @@ header{
     width:100%;
     z-index:1000;
 
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(12px);
 
-    border-bottom:1px solid #e8e8e8;
+    border-bottom:1px solid rgba(0,0,0,.05);
 }
 
 nav{
@@ -52,12 +58,24 @@ nav{
 }
 
 .logo{
-    color:#004289;
-    font-size:1.7rem;
-    font-weight:700;
+    color:var(--primary);
+    font-size:1.6rem;
+    font-weight:800;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:600;
 }
 
 .hero{
+
     min-height:100vh;
 
     display:flex;
@@ -65,191 +83,255 @@ nav{
 
     background:
     linear-gradient(
-        rgba(0,66,137,0.78),
-        rgba(0,66,137,0.88)
+    rgba(0,66,137,0.82),
+    rgba(0,66,137,0.90)
     ),
     url("images/factory-birds-eye-view.jpg");
 
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
+}
+
+.hero-card{
+
+    max-width:760px;
+
+    padding:70px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25);
 
     color:white;
 }
 
-.hero-content{
+.badge{
 
-    max-width:800px;
-
-    padding:60px;
-
-    border-radius:24px;
-
-    background:rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,0.15);
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,0.25);
-}
-
-.tag{
     display:inline-block;
 
     padding:10px 18px;
 
-    border-radius:30px;
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
 
     margin-bottom:25px;
 
-    background:rgba(255,255,255,0.12);
-
-    border:1px solid rgba(255,255,255,0.2);
-
-    font-size:0.9rem;
-
-    letter-spacing:1px;
+    font-size:.9rem;
 }
 
 .hero h1{
-    font-size:4.5rem;
-    line-height:1.05;
-    margin-bottom:25px;
-}
 
-.hero p{
-    font-size:1.2rem;
-    margin-bottom:35px;
+    font-size:5rem;
+
+    line-height:1;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    letter-spacing:-2px;
 }
 
 .yellow-line{
-    width:80px;
+
+    width:90px;
     height:5px;
-    background:#FFDE14;
+
+    background:var(--secondary);
+
+    border-radius:50px;
+
     margin-bottom:30px;
-    border-radius:10px;
 }
 
-.hero-buttons{
+.hero p{
+
+    font-size:1.2rem;
+
+    margin-bottom:40px;
+
+    max-width:650px;
+}
+
+.button-group{
+
     display:flex;
     gap:15px;
     flex-wrap:wrap;
 }
 
 .btn{
+
     display:inline-block;
-
-    background:#FFDE14;
-    color:#004289;
-
-    padding:16px 35px;
-
-    border-radius:50px;
 
     text-decoration:none;
 
+    padding:16px 34px;
+
+    border-radius:50px;
+
     font-weight:700;
 
-    box-shadow:
-    0 10px 30px rgba(255,222,20,0.35);
-
-    transition:0.3s;
+    transition:.3s;
 }
 
-.btn:hover{
+.btn-primary{
+
+    background:var(--secondary);
+    color:var(--primary);
+
+    box-shadow:
+    0 10px 30px rgba(255,222,20,.35);
+}
+
+.btn-primary:hover{
     transform:translateY(-3px);
 }
 
-.btn-secondary{
-    display:inline-block;
-
-    padding:16px 35px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    color:white;
+.btn-outline{
 
     border:2px solid white;
+    color:white;
+}
 
-    font-weight:700;
+.btn-outline:hover{
+
+    background:white;
+    color:var(--primary);
 }
 
 .stats{
+
+    margin-top:50px;
+
     display:flex;
-    gap:40px;
-    margin-top:45px;
+
+    gap:50px;
+
     flex-wrap:wrap;
 }
 
 .stats h2{
-    color:#FFDE14;
+
+    color:var(--secondary);
+
+    font-size:2rem;
 }
 
 .section{
-    padding:100px 0;
+
+    padding:110px 0;
 }
 
 .section-title{
+
     text-align:center;
-    color:#004289;
-    font-size:2.5rem;
-    margin-bottom:60px;
+
+    color:var(--primary);
+
+    font-size:2.8rem;
+
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+
+    text-align:center;
+
+    color:var(--accent);
+
+    max-width:700px;
+
+    margin:auto auto 60px auto;
 }
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
     gap:25px;
 }
 
 .card{
+
     background:white;
 
     padding:35px;
 
-    border-radius:20px;
+    border-radius:24px;
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,0.08);
+    0 10px 25px rgba(0,0,0,.08);
 
-    transition:0.3s;
+    transition:.3s;
 }
 
 .card:hover{
+
     transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.12);
 }
 
 .card h3{
-    color:#004289;
+
+    color:var(--primary);
+
     margin-bottom:15px;
 }
 
-.cta{
-    background:#f6f8fb;
+.event{
+
+    background:#f7f9fc;
+}
+
+.event-box{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
     text-align:center;
 }
 
-.cta h2{
-    color:#004289;
-    font-size:2.8rem;
+.event-box h2{
+
+    color:var(--primary);
+
+    font-size:2.5rem;
+
     margin-bottom:20px;
 }
 
-.highlight{
-    color:#646363;
-    max-width:700px;
-    margin:auto;
-}
-
 footer{
-    background:#004289;
+
+    background:var(--primary);
+
     color:white;
+
     text-align:center;
-    padding:35px;
+
+    padding:40px;
 }
 
 @media(max-width:768px){
@@ -258,152 +340,164 @@ footer{
     font-size:3rem;
 }
 
-.hero-content{
+.hero-card{
     padding:35px;
+}
+
+.nav-links{
+    display:none;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                Midland Steel Development
-            </div>
-        </nav>
-    </div>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Midland Steel Development
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#event">Engineers Day</a>
+</div>
+
+</nav>
+
+</div>
+
 </header>
 
 <section class="hero">
 
-    <div class="container">
+<div class="container">
 
-        <div class="hero-content">
+<div class="hero-card">
 
-            <div class="tag">
-                CPD • Engineering • Innovation
-            </div>
+<div class="badge">
+CPD • Engineering • Innovation
+</div>
 
-            <h1>
-                Engineering Knowledge Built From Industry Experience
-            </h1>
+<h1>
+Engineering Knowledge Built From Industry Experience
+</h1>
 
-            <div class="yellow-line"></div>
-<img src="images/factory-birds-eye-view.jpg"
-     style="width:100%;max-width:700px;border-radius:20px;">
-            <p>
-                Midland Steel Development delivers industry-leading
-                CPD programmes, technical seminars and learning events
-                for engineers, architects, designers and construction
-                professionals throughout Ireland.
-            </p>
+<div class="yellow-line"></div>
 
-            <div class="hero-buttons">
+<p>
+Midland Steel Development delivers high-quality Continuing Professional Development programmes, technical seminars and knowledge-sharing events designed for engineers, architects, designers and construction professionals throughout Ireland.
+</p>
 
-                <a href="#courses" class="btn">
-                    Explore Courses
-                </a>
+<div class="button-group">
 
-                <a href="#event" class="btn-secondary">
-                    Engineers Day 2026
-                </a>
+<a href="#courses" class="btn btn-primary">
+Explore Courses
+</a>
 
-            </div>
+<a href="#event" class="btn btn-outline">
+Engineers Day 2026
+</a>
 
-            <div class="stats">
+</div>
 
-                <div>
-                    <h2>20+</h2>
-                    <p>Technical Topics</p>
-                </div>
+<div class="stats">
 
-                <div>
-                    <h2>100+</h2>
-                    <p>Industry Professionals</p>
-                </div>
+<div>
+<h2>20+</h2>
+<p>Technical Topics</p>
+</div>
 
-                <div>
-                    <h2>CPD</h2>
-                    <p>Certified Learning</p>
-                </div>
+<div>
+<h2>100+</h2>
+<p>Industry Professionals</p>
+</div>
 
-            </div>
+<div>
+<h2>CPD</h2>
+<p>Certified Learning</p>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+</div>
 
 </section>
 
 <section id="courses" class="section">
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="section-title">
-            Why Choose Midland Steel Development?
-        </h2>
+<h2 class="section-title">
+Why Choose Midland Steel Development?
+</h2>
 
-        <div class="cards">
+<p class="section-subtitle">
+Practical industry-led learning designed to help engineering professionals stay informed, compliant and competitive.
+</p>
 
-            <div class="card">
-                <h3>Industry Focused</h3>
-                <p>
-                    Real insights and practical learning built around
-                    engineering, manufacturing and construction.
-                </p>
-            </div>
+<div class="cards">
 
-            <div class="card">
-                <h3>Expert Speakers</h3>
-                <p>
-                    Learn from experienced professionals and recognised
-                    industry specialists.
-                </p>
-            </div>
+<div class="card">
+<h3>Industry Focused</h3>
+<p>Real engineering challenges, real case studies and practical applications.</p>
+</div>
 
-            <div class="card">
-                <h3>Professional Growth</h3>
-                <p>
-                    Strengthen technical knowledge while supporting
-                    ongoing CPD requirements.
-                </p>
-            </div>
+<div class="card">
+<h3>Expert Speakers</h3>
+<p>Learn from experienced engineers and recognised industry specialists.</p>
+</div>
 
-        </div>
+<div class="card">
+<h3>Professional Development</h3>
+<p>Support CPD requirements while expanding technical knowledge and expertise.</p>
+</div>
 
-    </div>
+</div>
+
+</div>
 
 </section>
 
-<section id="event" class="section cta">
+<section id="event" class="section event">
 
-    <div class="container">
+<div class="container">
 
-        <h2>CPD Engineers Day 2026</h2>
+<div class="event-box">
 
-        <p class="highlight">
-            Bringing together innovation, engineering excellence and
-            professional development through a focused programme of
-            technical presentations and industry discussion.
-        </p>
+<h2>
+CPD Engineers Day 2026
+</h2>
 
-        <br><br>
+<p>
+A focused day of engineering excellence, technical presentations, innovative product solutions and valuable networking opportunities.
+</p>
 
-        <a href="#" class="btn">
-            Register Interest
-        </a>
+<br>
 
-    </div>
+<a href="#" class="btn btn-primary">
+Register Interest
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 Midland Steel Development | Engineering CPD & Learning
+© 2026 Midland Steel Development | Engineering CPD & Learning
 </footer>
 
 </body>
