@@ -75,6 +75,13 @@ nav{
     transform:scale(1.02);
 }
 
+nav ul{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
 nav li{
     list-style:none;
 }
@@ -365,6 +372,12 @@ footer{
     transform:translateY(0);
 }
 
+.countdown-finished{
+    color:var(--primary);
+    font-size:1.4rem;
+    font-weight:700;
+}
+
 @keyframes heroFade{
 
     from{
@@ -376,7 +389,8 @@ footer{
         opacity:1;
         transform:translateY(0);
     }
-}@media(max-width:768px){
+}
+@media(max-width:768px){
 
 .hero h1{
     font-size:3rem;
@@ -529,7 +543,7 @@ Build knowledge, strengthen skills and meet CPD requirements.
 </div>
 
 </section>
-    
+
 <!-- COUNTDOWN SECTION START -->
 
 <section class="section reveal">
@@ -544,7 +558,7 @@ Countdown to Engineers Day 2026
 23 July 2026
 </p>
 
-<div class="cards">
+<div class="cards" id="countdown-cards">
 
 <div class="card" style="text-align:center;">
 <h3 id="days">0</h3>
@@ -606,40 +620,27 @@ Register Interest
 <footer>
 © 2026 Midland Steel Development | Engineering CPD & Learning
 </footer>
-<script>
-
-const eventDate =
-new Date("July 23, 2026 10:30:00").getTime();
-
-setInterval(() => {
-
-const now = new Date().getTime();
-
-const distance = eventDate - now;
-
-document.getElementById("days").innerHTML =
-Math.floor(distance / (1000*60*60*24));
-
-document.getElementById("hours").innerHTML =
-Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-
-document.getElementById("minutes").innerHTML =
-Math.floor((distance % (1000*60*60)) / (1000*60));
-
-document.getElementById("seconds").innerHTML =
-Math.floor((distance % (1000*60)) / 1000);
-
-},1000);
 
 <script>
 
 const eventDate =
 new Date("July 23, 2026 10:30:00").getTime();
 
-setInterval(() => {
+const countdownInterval = setInterval(() => {
 
     const now = new Date().getTime();
     const distance = eventDate - now;
+
+    if (distance < 0) {
+
+        clearInterval(countdownInterval);
+
+        document.getElementById("countdown-cards").innerHTML =
+            '<div class="countdown-finished">Engineers Day has begun — thanks for joining us!</div>';
+
+        return;
+
+    }
 
     document.getElementById("days").innerHTML =
         Math.floor(distance / (1000*60*60*24));
