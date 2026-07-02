@@ -38,23 +38,15 @@ body{
 }
 
 header{
-
     position:fixed;
-
     top:0;
-
+    left:0;
     width:100%;
-
     z-index:1000;
 
-    background:rgba(255,255,255,0.92);
+    background:#22468A;
 
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(0,0,0,0.05);
-
-    box-shadow:
-    0 2px 20px rgba(0,0,0,0.04);
+    box-shadow:0 6px 25px rgba(0,0,0,.15);
 }
 
 
@@ -83,16 +75,20 @@ nav{
     transform:scale(1.02);
 }
 
-nav ul{
+nav li{
     list-style:none;
-    display:flex;
-    gap:30px;
+}
 }
 
 nav a{
     text-decoration:none;
-    color:var(--primary);
+    color:white;
     font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#FFDE14;
 }
 
 .hero{
@@ -119,18 +115,21 @@ nav a{
 
     padding:70px;
 
-    border-radius:30px;
+    border-radius:32px;
 
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.10);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(20px);
 
-    border:1px solid rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.12);
 
     box-shadow:
-    0 30px 60px rgba(0,0,0,0.25);
+    0 30px 80px rgba(0,0,0,0.30);
 
     color:white;
+
+    animation:heroFade 1s ease;
+}
 }
 
 .tag{
@@ -355,7 +354,32 @@ footer{
     padding:40px;
 }
 
-@media(max-width:768px){
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes heroFade{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}@media(max-width:768px){
 
 .hero h1{
     font-size:3rem;
@@ -416,9 +440,12 @@ nav ul{
 CPD • Engineering • Innovation
 </div>
 
+
 <h1>
-Engineering Knowledge Built From Industry Experience
+Engineering Knowledge.<br>
+Built For Progress.
 </h1>
+
 
 <div class="yellow-line"></div>
 
@@ -472,7 +499,7 @@ Register for Engineers Day, July 23rd, 2026</a>
 <div class="container">
 
 <h2 class="section-title">
-Why Midland Steel Development?
+Why Midland Steel?
 </h2>
 
 <p class="section-subtitle">
@@ -611,31 +638,53 @@ Math.floor((distance % (1000*60)) / 1000);
 
 },1000);
 
-</script>
 <script>
+
+const eventDate =
+new Date("July 23, 2026 10:30:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+
+const distance = eventDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance / (1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance % (1000*60*60)) / (1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance % (1000*60)) / 1000);
+
+},1000);
 
 const reveals =
 document.querySelectorAll('.reveal');
 
-window.addEventListener('scroll', () => {
+function revealSections(){
 
-reveals.forEach(reveal => {
+reveals.forEach(section => {
 
 const revealTop =
-reveal.getBoundingClientRect().top;
+section.getBoundingClientRect().top;
 
-const windowHeight =
-window.innerHeight;
+if(revealTop < window.innerHeight - 100){
 
-if(revealTop < windowHeight - 100){
-
-reveal.classList.add('active');
+section.classList.add('active');
 
 }
 
 });
 
-});
+}
 
-</script></body>
-</html>
+window.addEventListener('scroll', revealSections);
+
+revealSections();
+
+</script>
