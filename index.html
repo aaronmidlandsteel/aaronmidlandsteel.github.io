@@ -475,7 +475,53 @@ Build knowledge, strengthen skills and meet CPD requirements.
 </div>
 
 </section>
+</section>
 
+<!-- COUNTDOWN SECTION START -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Countdown to Engineers Day 2026
+</h2>
+
+<p class="section-subtitle">
+23 July 2026
+</p>
+
+<div class="cards">
+
+<div class="card" style="text-align:center;">
+<h3 id="days">0</h3>
+<p>Days</p>
+</div>
+
+<div class="card" style="text-align:center;">
+<h3 id="hours">0</h3>
+<p>Hours</p>
+</div>
+
+<div class="card" style="text-align:center;">
+<h3 id="minutes">0</h3>
+<p>Minutes</p>
+</div>
+
+<div class="card" style="text-align:center;">
+<h3 id="seconds">0</h3>
+<p>Seconds</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COUNTDOWN SECTION END -->
+
+<section id="event" class="section event">
 <section id="event" class="section event">
 
 <div class="container">
@@ -508,6 +554,31 @@ Register Interest
 <footer>
 © 2026 Midland Steel Development | Engineering CPD & Learning
 </footer>
+<script>
 
+const eventDate =
+new Date("July 23, 2026 10:30:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+
+const distance = eventDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance / (1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance % (1000*60*60)) / (1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance % (1000*60)) / 1000);
+
+},1000);
+
+</script>
 </body>
 </html>
