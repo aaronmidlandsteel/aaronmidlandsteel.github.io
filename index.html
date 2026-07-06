@@ -380,6 +380,63 @@ footer{
     font-weight:700;
 }
 
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+}
+
+.gallery-item{
+
+    background:#eef2f6;
+
+    border:2px dashed #b8c4d0;
+
+    border-radius:20px;
+
+    aspect-ratio:4/3;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:var(--grey);
+
+    padding:20px;
+
+    overflow:hidden;
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:18px;
+}
+
+.gallery-caption{
+
+    text-align:center;
+
+    color:var(--grey);
+
+    font-size:.95rem;
+
+    margin-top:10px;
+}
+
 @keyframes heroFade{
 
     from{
@@ -415,6 +472,10 @@ footer{
 
 <body>
 
+<!-- ============================================================
+     HEADER / NAVIGATION
+     Edit menu links + logo here
+============================================================ -->
 <header>
 
 <div class="container">
@@ -437,6 +498,7 @@ footer{
 <li><a href="#about">About</a></li>
 <li><a href="#courses">Courses</a></li>
 <li><a href="#venue">Venue</a></li>
+<li><a href="#gallery">Gallery</a></li>
 <li><a href="#event">Engineers Day</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -447,6 +509,10 @@ footer{
 
 </header>
 
+<!-- ============================================================
+     HERO SECTION
+     Main banner: headline, intro text, CTA button, top stats row
+============================================================ -->
 <section class="hero">
 
 <div class="container">
@@ -492,6 +558,15 @@ Reserve Your Place – Engineers Day 2026
 <p>Certified Learning</p>
 </div>
 
+<div>
+<h2>RTP</h2>
+<p>Engineers Ireland Accredited</p>
+</div>
+
+<div>
+<h2>Portlaoise</h2>
+<p>SMART Facility</p>
+</div>
 
 </div>
 
@@ -501,6 +576,10 @@ Reserve Your Place – Engineers Day 2026
 
 </section>
 
+<!-- ============================================================
+     ABOUT MIDLAND STEEL SECTION
+     Company background/description text
+============================================================ -->
 <section id="about" class="section reveal">
     <div class="container">
         <h2 class="section-title">
@@ -526,6 +605,10 @@ Reserve Your Place – Engineers Day 2026
     </div>
 </section>
 
+<!-- ============================================================
+     "WHY MIDLAND STEEL?" SECTION
+     3 feature cards: Industry Focused / Expert Speakers / Professional Growth
+============================================================ -->
 <section id="courses" class="section reveal">
 
 <div class="container">
@@ -567,6 +650,11 @@ Build knowledge, strengthen skills and meet CPD requirements.
 
 </section>
 
+<!-- ============================================================
+     VENUE & ACCREDITATION SECTION
+     Portlaoise SMART Facility card + Engineers Ireland RTP card
+     (CPD hours placeholder "[X]" still needs the real number)
+============================================================ -->
 <section id="venue" class="section reveal">
 
 <div class="container">
@@ -584,14 +672,14 @@ A working manufacturing facility, with learning that counts towards your profess
 <div class="card">
 <h3>📍 Portlaoise SMART Facility</h3>
 <p>
-Engineers Day 2026 takes place at Midland Steel's SMART offsite manufacturing facility in Portlaoise, Co. Laois — Europe's greenest rebar facility.
+Engineers Day 2026 takes place at Midland Steel's SMART offsite manufacturing facility in Portlaoise, Co. Laois — see rebar manufacturing, robotic welding and offsite production in action.
 </p>
 </div>
 
 <div class="card">
 <h3>🎓 Engineers Ireland Accredited</h3>
 <p>
-This event is accredited by Engineers Ireland as a Registered Training Provider (RTP), so your attendance counts towards your CPD requirements. 3 CPD hours awarded — certificates issued on completion.
+This event is accredited by Engineers Ireland as a Registered Training Provider (RTP), so your attendance counts towards your CPD requirements. [X] CPD hours awarded — certificates issued on completion.
 </p>
 </div>
 
@@ -601,8 +689,90 @@ This event is accredited by Engineers Ireland as a Registered Training Provider 
 
 </section>
 
-<!-- COUNTDOWN SECTION START -->
+<!-- ============================================================
+     PHOTO GALLERY SECTION — "PREVIOUS ENGINEERS DAY"
+     Builds credibility with photos from the 25 June 2026 event.
 
+     HOW TO ADD A PHOTO:
+     1. Replace the placeholder <div class="gallery-item">...</div>
+        with: <div class="gallery-item"><img src="images/YOUR-PHOTO.jpg" alt="Describe photo"></div>
+     2. Edit the caption text underneath if needed (or delete the
+        <p class="gallery-caption"> line if you don't want captions)
+     3. Copy/paste a whole gallery block to add more photos
+============================================================ -->
+<section id="gallery" class="section reveal">
+
+<div class="container">
+
+<h2 class="section-title">
+Previous Engineers Day
+</h2>
+
+<p class="section-subtitle">
+A look back at our first CPD Engineers Day, held on 25 June 2026 at the Portlaoise SMART Facility.
+</p>
+
+<div class="gallery">
+
+<div>
+<!-- PHOTO 1 — replace this placeholder with your image -->
+<div class="gallery-item">
+Photo 1
+</div>
+<p class="gallery-caption">Caption goes here</p>
+</div>
+
+<div>
+<!-- PHOTO 2 — replace this placeholder with your image -->
+<div class="gallery-item">
+Photo 2
+</div>
+<p class="gallery-caption">Caption goes here</p>
+</div>
+
+<div>
+<!-- PHOTO 3 — replace this placeholder with your image -->
+<div class="gallery-item">
+Photo 3
+</div>
+<p class="gallery-caption">Caption goes here</p>
+</div>
+
+<div>
+<!-- PHOTO 4 — replace this placeholder with your image -->
+<div class="gallery-item">
+Photo 4
+</div>
+<p class="gallery-caption">Caption goes here</p>
+</div>
+
+<div>
+<!-- PHOTO 5 — replace this placeholder with your image -->
+<div class="gallery-item">
+Photo 5
+</div>
+<p class="gallery-caption">Caption goes here</p>
+</div>
+
+<div>
+<!-- PHOTO 6 — replace this placeholder with your image -->
+<div class="gallery-item">
+Photo 6
+</div>
+<p class="gallery-caption">Caption goes here</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ============================================================
+     COUNTDOWN SECTION
+     Live JS countdown timer to 23 July 2026, 10:30am
+     (timer logic is in the <script> at the bottom of the page)
+============================================================ -->
 <section id="countdown" class="section reveal">
 
     <div class="container">
@@ -642,9 +812,12 @@ This event is accredited by Engineers Ireland as a Registered Training Provider 
     </div>
 
 </section>
-
 <!-- COUNTDOWN SECTION END -->
 
+<!-- ============================================================
+     REGISTRATION / CTA SECTION
+     "CPD Engineers Day 2026" — main registration call-to-action
+============================================================ -->
 <section id="event" class="section event reveal">
 
 <div class="container">
@@ -677,6 +850,10 @@ Reserve Your Place
 
 </section>
 
+<!-- ============================================================
+     CONTACT SECTION
+     Aaron's contact details for enquiries
+============================================================ -->
 <section id="contact" class="section reveal">
 
     <div class="container">
@@ -717,9 +894,18 @@ Reserve Your Place
 
 </section>
 
+<!-- ============================================================
+     FOOTER
+============================================================ -->
 <footer>
 © 2026 Midland Steel  | Engineering CPD & Learning
 </footer>
+
+<!-- ============================================================
+     SCRIPTS
+     1. Countdown timer logic
+     2. Scroll-reveal animation logic
+============================================================ -->
 <script>
 
 const eventDate =
